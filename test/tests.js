@@ -23,6 +23,11 @@ module.exports = function (flatMap, t) {
 
 		st.deepEqual(mapped, [1, 0, [2], 1, [3, 4], 2], 'array is flattened and mapped to tuples of item/index');
 
+		var context = {};
+		var actual;
+		flatMap([1], function () { actual = this; }, context);
+		st.equal(actual, context, 'thisArg works as expected');
+
 		st.end();
 	});
 };
