@@ -30,4 +30,12 @@ module.exports = function (flatMap, t) {
 
 		st.end();
 	});
+
+	t.test('sparse arrays', function (st) {
+		var identity = function (x) { return x; };
+		// eslint-disable-next-line no-sparse-arrays
+		st.deepEqual(flatMap([, [1]], identity), flatMap([[], [1]], identity), 'an array hole is treated the same as an empty array');
+
+		st.end();
+	});
 };

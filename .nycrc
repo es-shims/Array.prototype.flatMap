@@ -5,7 +5,7 @@
 	"lines": 96,
 	"statements": 96,
 	"functions": 80,
-	"branches": 86,
+	"branches": 90,
 	"exclude": [
 		"coverage",
 		"test"
