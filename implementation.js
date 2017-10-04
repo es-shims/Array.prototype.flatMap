@@ -13,10 +13,6 @@ var FlattenIntoArray = function FlattenIntoArray(target, original, source, sourc
 	if (arguments.length > 6) {
 		mapperFunction = arguments[6];
 	}
-	var thisArg;
-	if (arguments.length > 7) {
-		thisArg = arguments[7];
-	}
 
 	while (sourceIndex < sourceLen) {
 		var P = ES.ToString(sourceIndex);
@@ -24,7 +20,10 @@ var FlattenIntoArray = function FlattenIntoArray(target, original, source, sourc
 		if (exists) {
 			var element = ES.Get(source, P);
 			if (typeof mapperFunction !== 'undefined') {
-				element = ES.Call(mapperFunction, thisArg, [element, sourceIndex, original]);
+				if (arguments.length <= 7) {
+					throw new TypeError('Assertion failed: thisArg is required when mapperFunction is provided');
+				}
+				element = ES.Call(mapperFunction, arguments[7], [element, sourceIndex, original]);
 			}
 			var spreadable = ES.IsArray(element);
 			if (spreadable && depth > 0) {
