@@ -8,6 +8,7 @@
 		"array-element-newline": 0,
 		"func-name-matching": 0,
 		"max-statements-per-line": [2, { "max": 2 }],
+		"max-statements": 0,
 		"new-cap": [2, {
 			"capIsNewExceptions": [
 				"ArraySpeciesCreate",
@@ -18,6 +19,7 @@
 				"HasProperty",
 				"IsArray",
 				"IsCallable",
+				"Set",
 				"ToLength",
 				"ToObject",
 				"ToString"
