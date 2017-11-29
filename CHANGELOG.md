@@ -1,3 +1,10 @@
+1.1.1 / 2017-11-29
+=================
+  * [Fix] avoid an extra hole in the array (#1)
+  * [Deps] update `es-abstract`
+  * [Dev Deps] update `eslint`, `nsp`, `object-inspect`
+  * [Tests] up to `node` `v9.2`, `v8.9`, `v6.12`; pin included builds to LTS
+
 1.1.0 / 2017-10-03
 =================
   * [New] add explicit setting of “length” on target array
