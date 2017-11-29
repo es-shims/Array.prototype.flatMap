@@ -21,7 +21,9 @@ module.exports = function (flatMap, t) {
 			return [x, i];
 		});
 
-		st.deepEqual(mapped, [1, 0, [2], 1, [3, 4], 2], 'array is flattened and mapped to tuples of item/index');
+		var expected = [1, 0, [2], 1, [3, 4], 2];
+		st.deepEqual(mapped, expected, 'array is flattened and mapped to tuples of item/index');
+		st.equal(mapped.length, expected.length, 'array has expected length');
 
 		var context = {};
 		var actual;

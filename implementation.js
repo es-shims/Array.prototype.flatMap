@@ -57,7 +57,7 @@ module.exports = function flatMap(callbackfn) {
 
 	var sourceLen = ES.ToLength(ES.Get(O, 'length'));
 	var A = ES.ArraySpeciesCreate(O, 0);
-	var lastIndex = FlattenIntoArray(A, O, O, sourceLen, 0, 1, callbackfn, T);
-	ES.Set(A, 'length', lastIndex + 1, true);
+	var nextIndex = FlattenIntoArray(A, O, O, sourceLen, 0, 1, callbackfn, T);
+	ES.Set(A, 'length', nextIndex, true);
 	return A;
 };
