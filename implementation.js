@@ -46,6 +46,8 @@ var FlattenIntoArray = function FlattenIntoArray(target, original, source, sourc
 
 module.exports = function flatMap(callbackfn) {
 	var O = ES.ToObject(this);
+	var sourceLen = ES.ToLength(ES.Get(O, 'length'));
+
 	if (!ES.IsCallable(callbackfn)) {
 		throw new TypeError('callback must be a function');
 	}
@@ -55,7 +57,6 @@ module.exports = function flatMap(callbackfn) {
 		T = arguments[1];
 	}
 
-	var sourceLen = ES.ToLength(ES.Get(O, 'length'));
 	var A = ES.ArraySpeciesCreate(O, 0);
 	var nextIndex = FlattenIntoArray(A, O, O, sourceLen, 0, 1, callbackfn, T);
 	ES.Set(A, 'length', nextIndex, true);
