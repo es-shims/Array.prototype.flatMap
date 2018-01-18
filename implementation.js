@@ -25,8 +25,11 @@ var FlattenIntoArray = function FlattenIntoArray(target, source, sourceLen, star
 				}
 				element = ES.Call(mapperFunction, arguments[6], [element, sourceIndex, source]);
 			}
-			var flattenable = depth > 0 ? ES.IsArray(element) : false;
-			if (flattenable) {
+			var shouldFlatten = false;
+			if (depth > 0) {
+				shouldFlatten = ES.IsArray(element);
+			}
+			if (shouldFlatten) {
 				var elementLen = ES.ToLength(ES.Get(element, 'length'));
 				targetIndex = FlattenIntoArray(target, element, elementLen, targetIndex, depth - 1);
 			} else {
