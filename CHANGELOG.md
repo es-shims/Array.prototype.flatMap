@@ -1,3 +1,12 @@
+1.2.0 / 2018-01-18
+=================
+  * [New] add "auto" entry point
+  * [Fix] Move the receiver length check higher
+  * [Fix] spec adjustments
+  * [Refactor] adjust shouldFlatten logic
+  * [Dev Deps] update `eslint`, `object-inspect`
+  * [Tests] up to `node` `v9.4`
+
 1.1.1 / 2017-11-29
 =================
   * [Fix] avoid an extra hole in the array (#1)
