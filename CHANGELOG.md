@@ -1,3 +1,9 @@
+1.2.1 / 2018-02-23
+=================
+  * [Fix] Temporarily hack main entry, so it's compatible with other resolvers
+  * [Dev Deps] update `eslint`, `nsp`, `tape`
+  * [Tests] up to `node` `v9.6`, `v6.13`
+
 1.2.0 / 2018-01-18
 =================
   * [New] add "auto" entry point
