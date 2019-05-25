@@ -16,6 +16,13 @@
 	"description": "An ESnext spec-compliant `Array.prototype.flatMap` shim/polyfill/replacement that works as far down as ES3.",
 	"license": "MIT",
 	"main": "index",
+	"files": [
+		"index.js",
+		"auto.js",
+		"implementation.js",
+		"polyfill.js",
+		"shim.js"
+	],
 	"scripts": {
 		"prepublish": "safe-publish-latest",
 		"pretest": "npm run --silent lint && evalmd README.md",
