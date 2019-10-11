@@ -20,14 +20,13 @@
 		"prepublish": "safe-publish-latest",
 		"pretest": "npm run --silent lint && evalmd README.md",
 		"test": "npm run --silent tests-only",
-		"posttest": "npm run --silent security",
+		"posttest": "npx aud --production",
 		"pretests-only": "es-shim-api --bound",
 		"tests-only": "npm run --silent test:shimmed && npm run --silent test:module",
 		"test:shimmed": "node test/shimmed",
 		"test:module": "node test",
 		"coverage": "nyc npm run tests-only",
-		"lint": "eslint test/*.js *.js",
-		"security": "nsp check"
+		"lint": "eslint test/*.js *.js"
 	},
 	"repository": {
 		"type": "git",
@@ -56,7 +55,6 @@
 		"eslint": "^4.18.1",
 		"evalmd": "^0.0.17",
 		"foreach": "^2.0.5",
-		"nsp": "^3.2.1",
 		"nyc": "^10.3.2",
 		"object-inspect": "^1.5.0",
 		"safe-publish-latest": "^1.1.1",
