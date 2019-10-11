@@ -26,5 +26,14 @@
 			]
 		}],
 		"no-magic-numbers": 0,
-	}
+	},
+
+	"overrides": [
+		{
+			"files": "test/**",
+			"rules": {
+				"no-invalid-this": [1],
+			},
+		},
+	],
 }
