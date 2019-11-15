@@ -1,14 +1,14 @@
 'use strict';
 
 var define = require('define-properties');
-var bind = require('function-bind');
+var callBind = require('es-abstract/helpers/callBind');
 
 var implementation = require('./implementation');
 var getPolyfill = require('./polyfill');
 var polyfill = getPolyfill();
 var shim = require('./shim');
 
-var boundFlatMap = bind.call(Function.call, polyfill);
+var boundFlatMap = callBind(polyfill);
 
 define(boundFlatMap, {
 	getPolyfill: getPolyfill,
