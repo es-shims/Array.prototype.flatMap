@@ -1,12 +1,17 @@
 'use strict';
 
-var ES = require('es-abstract/es2019');
+var ArraySpeciesCreate = require('es-abstract/2019/ArraySpeciesCreate');
+var FlattenIntoArray = require('es-abstract/2019/FlattenIntoArray');
+var Get = require('es-abstract/2019/Get');
+var IsCallable = require('es-abstract/2019/IsCallable');
+var ToLength = require('es-abstract/2019/ToLength');
+var ToObject = require('es-abstract/2019/ToObject');
 
 module.exports = function flatMap(mapperFunction) {
-	var O = ES.ToObject(this);
-	var sourceLen = ES.ToLength(ES.Get(O, 'length'));
+	var O = ToObject(this);
+	var sourceLen = ToLength(Get(O, 'length'));
 
-	if (!ES.IsCallable(mapperFunction)) {
+	if (!IsCallable(mapperFunction)) {
 		throw new TypeError('mapperFunction must be a function');
 	}
 
@@ -15,7 +20,7 @@ module.exports = function flatMap(mapperFunction) {
 		T = arguments[1];
 	}
 
-	var A = ES.ArraySpeciesCreate(O, 0);
-	ES.FlattenIntoArray(A, O, sourceLen, 0, 1, mapperFunction, T);
+	var A = ArraySpeciesCreate(O, 0);
+	FlattenIntoArray(A, O, sourceLen, 0, 1, mapperFunction, T);
 	return A;
 };
