@@ -1,3 +1,12 @@
+1.2.3 / 2019-12-12
+=================
+  * [Refactor] use split-up `es-abstract` (65% bundle size decrease)
+  * [Deps] update `es-abstract`
+  * [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `safe-publish-latest`, `object-inspect`
+  * [meta] add `funding` field
+  * [Tests] use shared travis-ci configs
+  * [actions] add automatic rebasing / merge commit blocking
+
 1.2.2 / 2019-10-10
 =================
   * [Refactor] rename callback argument to `mapperFunction`, to match spec
