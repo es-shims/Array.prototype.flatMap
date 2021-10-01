@@ -24,13 +24,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: ljharb/actions/node/install@main
-        name: 'nvm install ${{ matrix.node-version }} && npm install'
+      - uses: ljharb/actions/node/run@main
+        name: 'npm install && npm run tests-only'
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm run tests-only
-      - uses: codecov/codecov-action@v1
-
+          command: 'tests-only'
   minors:
     needs: [matrix, latest]
     name: 'non-latest minors'
@@ -43,12 +41,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: ljharb/actions/node/install@main
-        name: 'nvm install ${{ matrix.node-version }} && npm install'
+      - uses: ljharb/actions/node/run@main
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm run tests-only
-      - uses: codecov/codecov-action@v1
+          command: 'tests-only'
 
   node:
     name: 'node 4+'

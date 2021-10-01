@@ -8,19 +8,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: ljharb/actions/node/install@main
-        name: 'nvm install lts/* && npm install'
+      - uses: ljharb/actions/node/run@main
+        name: 'npm install && npm run pretest'
         with:
           node-version: 'lts/*'
-      - run: npm run pretest
+          command: 'pretest'
 
   posttest:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
-      - uses: ljharb/actions/node/install@main
-        name: 'nvm install lts/* && npm install'
+      - uses: ljharb/actions/node/run@main
+        name: 'npm install && npm run posttest'
         with:
           node-version: 'lts/*'
-      - run: npm run posttest
+          command: 'posttest'
