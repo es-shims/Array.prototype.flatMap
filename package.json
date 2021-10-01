@@ -16,7 +16,7 @@
 			"url": "http://ljharb.codes"
 		}
 	],
-	"description": "An ESnext spec-compliant `Array.prototype.flatMap` shim/polyfill/replacement that works as far down as ES3.",
+	"description": "An ES2019 spec-compliant `Array.prototype.flatMap` shim/polyfill/replacement that works as far down as ES3.",
 	"license": "MIT",
 	"main": "index",
 	"scripts": {
