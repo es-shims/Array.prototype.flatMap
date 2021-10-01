@@ -1,3 +1,13 @@
+1.2.5 / 2021-10-01
+=================
+  * [readme] add github actions/codecov badges; update description; remove travis badge
+  * [Deps] update `call-bind`, `es-abstract`; remove unused `function-bind`
+  * [meta] use `prepublishOnly`, for npm 7+
+  * [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `@es-shims/api`, `aud`, `has-strict-mode`, `object-inspect`, `tape`
+  * [actions] update workflows
+  * [actions] use `node/install` instead of `node/run`; use `codecov` action
+  * [Tests] increase coverage
+
 1.2.4 / 2020-11-18
 =================
   * [Deps] update `es-abstract`; use `call-bind` where applicable
