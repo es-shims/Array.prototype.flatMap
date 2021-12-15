@@ -20,12 +20,14 @@
 	"license": "MIT",
 	"main": "index",
 	"scripts": {
-		"prepublish": "safe-publish-latest",
-		"pretest": "npm run --silent lint && evalmd README.md",
+		"prepublishOnly": "safe-publish-latest",
+		"prepublish": "not-in-publish || npm run prepublishOnly",
+		"pretest": "npm run lint",
 		"test": "npm run tests-only",
 		"posttest": "aud --production",
 		"tests-only": "nyc tape 'test/**/*.js'",
-		"lint": "eslint .",
+		"prelint": "evalmd README.md",
+		"lint": "eslint --ext=js,mjs .",
 		"postlint": "es-shim-api --bound"
 	},
 	"repository": {
@@ -49,18 +51,18 @@
 		"es-abstract": "^1.19.0"
 	},
 	"devDependencies": {
-		"@es-shims/api": "^2.2.1",
-		"@ljharb/eslint-config": "^18.0.0",
+		"@es-shims/api": "^2.2.3",
+		"@ljharb/eslint-config": "^20.1.0",
 		"aud": "^1.1.5",
 		"covert": "^1.1.1",
-		"eslint": "^7.32.0",
-		"evalmd": "0.0.19",
+		"eslint": "^8.4.1",
+		"evalmd": "^0.0.19",
 		"foreach": "^2.0.5",
 		"has-strict-mode": "^1.0.1",
 		"nyc": "^10.3.2",
-		"object-inspect": "^1.11.0",
-		"safe-publish-latest": "^1.1.4",
-		"tape": "^5.3.1"
+		"object-inspect": "^1.11.1",
+		"safe-publish-latest": "^2.0.0",
+		"tape": "^5.3.2"
 	},
 	"testling": {
 		"files": [
