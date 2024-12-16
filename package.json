@@ -49,9 +49,9 @@
 		"es-shim API"
 	],
 	"dependencies": {
-		"call-bind": "^1.0.5",
+		"call-bind": "^1.0.8",
 		"define-properties": "^1.2.1",
-		"es-abstract": "^1.22.3",
+		"es-abstract": "^1.23.5",
 		"es-shim-unscopables": "^1.0.2"
 	},
 	"devDependencies": {
